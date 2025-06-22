@@ -2,7 +2,6 @@
 #include "loader.h"
 #include "console.h"
 
-#pragma section=".bss"
 
 /** @defgroup B_STM32U585I_IOT02_OSPI_Private_Functions Private Functions
   * @{
@@ -106,9 +105,16 @@ static void console_init (void)
 int Init()
 {
     /*  Init structs to Zero*/
-    char *   startadd =  __section_begin(".bss");
-    uint32_t size =  __section_size(".bss");
-    memset(startadd,0,size);
+#if defined(__ICCARM__)
+    char *startadd = __section_begin(".bss");
+    uint32_t size  = __section_size(".bss");
+#else
+    extern char __bss_start__;
+    extern char __bss_end__;
+    char *startadd = &__bss_start__;
+    uint32_t size  = &__bss_end__ - &__bss_start__;
+#endif
+    memset(startadd, 0, size);
 
     SystemInit();
     HAL_Init();
