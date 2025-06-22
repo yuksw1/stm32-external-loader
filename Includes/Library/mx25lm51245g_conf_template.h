@@ -28,7 +28,7 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32U5xx_hal.h"
+#include "stm32u5xx_hal.h"
 
 /** @addtogroup BSP
   * @{

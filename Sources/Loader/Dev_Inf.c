@@ -25,7 +25,7 @@
 #if defined (__ICCARM__)
 __root struct StorageInfo const StorageInfo  =  {
 #else
-struct StorageInfo const StorageInfo  =  {
+struct StorageInfo const StorageInfo __attribute__((used)) =  {
 #endif
    "MYFLASH_APROTECH",                                              // Device Name + DISCO Board name
    NOR_FLASH,                                               // Device Type
