@@ -1,8 +1,8 @@
 /* Linker script for GCC build */
 MEMORY
 {
-  INFO (r)  : ORIGIN = 0x00000000, LENGTH = 0x100
-  RAM  (rwx) : ORIGIN = 0x20000004, LENGTH = 0x3FFFC
+  INFOMEM (r)  : ORIGIN = 0x00000000, LENGTH = 0x100
+  RAM     (rwx) : ORIGIN = 0x20000004, LENGTH = 0x3FFFC
 }
 
 ENTRY(Init)
@@ -31,5 +31,5 @@ SECTIONS
   .info :
   {
     *(.info*)
-  } > INFO
+  } > INFOMEM
 }
