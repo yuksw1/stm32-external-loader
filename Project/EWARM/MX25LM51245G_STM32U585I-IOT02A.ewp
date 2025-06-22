@@ -2155,12 +2155,6 @@
     <group>
         <name>Library</name>
         <file>
-            <name>$PROJ_DIR$\..\..\Sources\Library\b_u585i_iot02_ospi.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\Sources\Library\mx25lm51245g.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\..\Sources\Library\stm32u5xx_hal.c</name>
         </file>
         <file>
@@ -2191,16 +2185,25 @@
             <name>$PROJ_DIR$\..\..\Sources\Library\stm32u5xx_hal_rcc_ex.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\Sources\Library\stm32u5xx_hal_uart.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Sources\Library\stm32u5xx_hal_uart_ex.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\Sources\Library\system_stm32u5xx.c</name>
         </file>
     </group>
     <group>
         <name>Loader</name>
         <file>
+            <name>$PROJ_DIR$\..\..\Sources\Loader\console.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\Sources\Loader\Dev_Inf.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\Sources\Loader\Loader_Src.c</name>
+            <name>$PROJ_DIR$\..\..\Sources\Loader\loader.c</name>
         </file>
     </group>
 </project>

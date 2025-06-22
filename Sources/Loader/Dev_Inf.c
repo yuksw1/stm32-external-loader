@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    Dev_Inf.c
   * @author  MCD Application Team
-  * @brief   This file defines the structure containing informations about the 
-  *          external flash memory MX25LM51245G used by STM32CubeProgramer in 
+  * @brief   This file defines the structure containing informations about the
+  *          external flash memory MX25LM51245G used by STM32CubeProgramer in
   *          programming/erasing the device.
   ******************************************************************************
   * @attention
@@ -27,15 +27,15 @@ __root struct StorageInfo const StorageInfo  =  {
 #else
 struct StorageInfo const StorageInfo  =  {
 #endif
-   "MX25LM51245G_STM32U585I-IOT02A", 	 					// Device Name + DISCO Board name
-   NOR_FLASH,                   					        // Device Type
-   0x70000000,                						        // Device Start Address
-   0x4000000,              						        // Device Size in 64 MBytes
-   0x1000,                    						        // Programming Page Size 256 Bytes
-   0xFF,                       						        // Initial Content of Erased Memory
+   "MYFLASH_APROTECH",                                              // Device Name + DISCO Board name
+   NOR_FLASH,                                               // Device Type
+   0xE0000000,                                              // Device Start Address
+   0x4000000,                                           // Device Size in 64 MBytes
+   0x1000,                                                  // Programming Page Size 256 Bytes
+   0xFF,                                                    // Initial Content of Erased Memory
 // Specify Size and Address of Sectors (view example below)
-   0x00000400, 0x00010000,     				 		        // Sector Num : 1024 ,Sector Size: 64 KBytes
-   0x00000000, 0x00000000,      
-}; 
+   0x00000400, 0x00010000,                                  // Sector Num : 1024 ,Sector Size: 64 KBytes
+   0x00000000, 0x00000000,
+};
 
 

@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2021 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -37,31 +36,29 @@ extern "C" {
   */
 
 /* Exported types ------------------------------------------------------------*/
-/** @addtogroup FLASH_Exported_Types FLASH Exported Types
+/** @addtogroup FLASHEx_Exported_Types FLASHEx Exported Types
   * @{
   */
 
 /**
-  * @brief  FLASH Block-based attributes structure definition
+  * @brief  FLASHEx Block-based attributes structure definition
   */
-#define FLASH_BLOCKBASED_NB_REG (4U)                    /*!< 4 Block-based registers for each Flash bank */
 
 typedef struct
 {
   uint32_t Bank;                                        /*!< Selection of the associated bank of Block-based Area.
                                                              This parameter must be a value of @ref FLASH_Banks */
-  uint32_t BBAttributesType;                            /*!< Block-Based Attributes type.
-                                                             This parameter must be a value of @ref FLASH_BB_Attributes */
-  uint32_t BBAttributes_array[FLASH_BLOCKBASED_NB_REG]; /*!< Each bit specifies the block-based attribute configuration of a page:
-                                                             0 means page non-protected, 1 means page protected.
-                                                             Protection (secure or privilege) depends on BBAttributesType value */
+  uint32_t BBAttributesType;                            /*!< Block-Based Attributes type. This parameter must
+                                                             be a value of @ref FLASH_BB_Attributes */
+  uint32_t BBAttributes_array[FLASH_BLOCKBASED_NB_REG]; /*!< Each bit specifies the block-based attribute configuration
+                                                             of a page: 0 means page non-protected, 1 means page
+                                                             protected. Protection (secure or privilege) depends
+                                                             on BBAttributesType value */
 } FLASH_BBAttributesTypeDef;
-/**
-  * @}
-  */
+
 
 /**
-  * @brief  FLASH Operation structure definition
+  * @brief  FLASHEx Operation structure definition
   */
 typedef struct
 {
@@ -72,6 +69,7 @@ typedef struct
   uint32_t Address;          /*!< Flash operation Address offset.
                                   This parameter is given by bank, and must be a value between 0x0 and 0xFFFF0 */
 } FLASH_OperationTypeDef;
+
 /**
   * @}
   */
@@ -83,11 +81,14 @@ typedef struct
 /** @defgroup PRIV_MODE_CFG FLASH privilege mode configuration
   * @{
   */
-#define FLASH_NSPRIV_GRANTED   0x00000000U           /*!< access to non-secure Flash registers is granted to privileged or unprivileged access */
-#define FLASH_NSPRIV_DENIED    FLASH_PRIVCFGR_NSPRIV /*!< access to non-secure Flash registers is denied to non-privilege access */
-
-#define FLASH_SPRIV_GRANTED    0x00000000U           /*!< access to secure Flash registers is granted to privileged or unprivileged access */
-#define FLASH_SPRIV_DENIED     FLASH_PRIVCFGR_SPRIV  /*!< access to secure Flash registers is denied to non-privilege access */
+#define FLASH_NSPRIV_GRANTED   0x00000000U           /*!< access to non-secure Flash registers is granted
+                                                          to privileged or unprivileged access */
+#define FLASH_NSPRIV_DENIED    FLASH_PRIVCFGR_NSPRIV /*!< access to non-secure Flash registers is denied
+                                                          to non-privilege access */
+#define FLASH_SPRIV_GRANTED    0x00000000U           /*!< access to secure Flash registers is granted to privileged
+                                                          or unprivileged access */
+#define FLASH_SPRIV_DENIED     FLASH_PRIVCFGR_SPRIV  /*!< access to secure Flash registers is denied
+                                                          to non-privilege access */
 /**
   * @}
   */
@@ -101,7 +102,7 @@ typedef struct
 /**
   * @}
   */
-#endif
+#endif /* __ARM_FEATURE_CMSE */
 
 /** @defgroup FLASH_LPM_CFG FLASH LPM configuration
   * @{
@@ -237,4 +238,3 @@ void FLASH_PageErase(uint32_t Page, uint32_t Banks);
 
 #endif /* STM32U5xx_HAL_FLASH_EX_H */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
