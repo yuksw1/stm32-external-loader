@@ -32,7 +32,8 @@
 
 ++ Hardware and Software Environment
 ------------------------------------
- - Build Toolchain : EWARM 8.50.9
+- Build Toolchain : EWARM 8.50.9
+- Alternate Build : GCC (arm-none-eabi). Run `make` at repository root.
  - HW : STM32U585I-IOT02A-Disco board rev Z
 
 The MX25LM51245G_STM32U585I-IOT02A.stldr has been successfully tested on CubeProgrammer v2.7 giving the following timing measurements:

@@ -24,12 +24,17 @@
 #define __LOADER_SRC_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32U5xx_hal.h"
-#include "stm32U5xx_hal_ospi.h"
+#include "stm32u5xx_hal.h"
+#include "stm32u5xx_hal_ospi.h"
 
 
 #define TIMEOUT 5000U
+
+#if defined(__ICCARM__)
 #define KeepInCompilation __root
+#else
+#define KeepInCompilation __attribute__((used))
+#endif
 
 /* Private function prototypes -----------------------------------------------*/
 int Init ();

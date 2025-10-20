@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include <inttypes.h>
 
-#pragma section=".bss"
 
 //#define SUPPORT_64BIT
 //#define SUPPORT_FLOAT
